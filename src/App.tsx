@@ -82,6 +82,13 @@ function List<ListItem>({
   );
 }
 
+// Class component
+class MyHeader extends React.Component<{ title: ReactNode }> {
+  render() {
+    return <h1>{this.props.title}</h1>;
+  }
+}
+
 function App() {
   return (
     <div className='App'>
@@ -97,6 +104,7 @@ function App() {
         items={['Lazar', 'Vuk', 'Goran']}
         render={(item: string) => <>{item.toUpperCase()}</>}
       ></List>
+      <MyHeader title='Good'></MyHeader>
     </div>
   );
 }
